@@ -187,6 +187,20 @@ var stooges = [
    {name: 'curly', age: 60, hairStyle: "buzzed"}
 ]
 
+//inpput: array of objects
+function pluck(objPlucker, propertyString){
+   //console.log(objPlucker, propertyString)
+   var objPlucked = []
+   for(var i=0 ; i < objPlucker.length; i ++){
+      //console.log(objPlucker[i][propertyString])
+      objPlucked.push(objPlucker[i][propertyString])
+
+   }
+   //output: arr of values
+   //console.log(objPlucked)
+return objPlucked
+}
+
 console.assert( pluck(stooges, 'name')[0] === 'moe' )
 console.assert( pluck(stooges, 'hairStyle')[2] === "buzzed" )
 console.assert( pluck(stooges, 'age')[2] === 60 )
@@ -204,6 +218,36 @@ var sampleText = "I'm tired of trying to find happiness through lies and self-me
 I need a fake passport, preferably to France. I like the way they think. Oh, COME ON! YOU'RE the Chiclet! Not me. Caw ca caw, caw ca caw, caw ca caw! It's ok. You be with Yam. So did you see the new Poof? His name's Gary and we don't need anymore lawsuits. If this were a Lifetime Moment of Truth movie, this would be our act break. But it wasn't. Michael, look, this has got to stop. I mean, flattered? Yes. Interested? Not tonight. \
 I'm foolish and I'm funny and I'm needy. Am I needy? Are you sure I'm not needy? 'Cause I feel needy sometimes. Obviously this blue part here is the land. \
 Let's see some bananas and nuts! This was a big get for God. They don't allow you to have bees in here. I want to cry so bad, but I don't think I can spare the moisture. No, Pop-pop does not get a treat, I just brought you a [bleep]ing pizza. It walked on my pillow! I'll buy you a hundred George Michaels that you can teach to drive! A group of British builders operating outside the O.C."
+//input: huge string
+function getCounts(str){
+   var wordCountObj = {}
+   var splitWordsArr = str.split(' ')//.toLowerCase()
+
+   for(var i=0 ; i<splitWordsArr.length; i++){
+   //console.log(splitWordsArr[i])
+   var theWord = splitWordsArr[i]
+
+   if(typeof wordCountObj[theWord] === 'undefined'){
+      wordCountObj[theWord] = 1
+   }else{
+      wordCountObj[theWord] = wordCountObj[theWord] + 1
+   }
+
+   // if(wordCountObj[theWord] ){
+   // wordCountObj[theWord] = wordCountObj[theWord] + 1
+   //    }
+   // //if word isnt found on obj ^^
+   // else{
+   // // if word is found.. below
+   // wordCountObj[theWord] = 1
+   //    }
+
+
+   }
+   console.log(wordCountObj)
+   //output: object - word count directory e.g. { the:80, soup:5}
+   return wordCountObj
+}
 
 var wordFrequencyObject = getCounts(sampleText)
 
@@ -228,6 +272,17 @@ var object = {
     apartment_no: "2b",
     structural_integrity: "failing"
 }
+var arrayToFill = {}
+function reverseObject(object){
+   for (var theProp in object){
+      //console.log(theProp)
+
+   arrayToFill[object[theProp]] = theProp
+}
+console.log(arrayToFill)
+return arrayToFill
+}
+
 
 var reversed = reverseObject(object)
 console.assert( reversed['2b'] === 'apartment_no' )
