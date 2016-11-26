@@ -275,7 +275,7 @@ var object = {
 var arrayToFill = {}
 function reverseObject(object){
    for (var theProp in object){
-      //console.log(theProp)
+      console.log(theProp)
 
    arrayToFill[object[theProp]] = theProp
 }
