@@ -221,7 +221,7 @@ Let's see some bananas and nuts! This was a big get for God. They don't allow yo
 //input: huge string
 function getCounts(str){
    var wordCountObj = {}
-   var splitWordsArr = str.split(' ')//.toLowerCase()
+   var splitWordsArr = str.toLowerCase().split(' ')//.toLowerCase()
 
    for(var i=0 ; i<splitWordsArr.length; i++){
    //console.log(splitWordsArr[i])
@@ -233,14 +233,6 @@ function getCounts(str){
       wordCountObj[theWord] = wordCountObj[theWord] + 1
    }
 
-   // if(wordCountObj[theWord] ){
-   // wordCountObj[theWord] = wordCountObj[theWord] + 1
-   //    }
-   // //if word isnt found on obj ^^
-   // else{
-   // // if word is found.. below
-   // wordCountObj[theWord] = 1
-   //    }
 
 
    }
